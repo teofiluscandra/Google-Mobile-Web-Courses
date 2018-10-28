@@ -1,0 +1,22 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "MWS Bali - Teofilus",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "https://teofiluscandra-mws.firebaseapp.com/",
+    "short_name": "Teofilus",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "images/js.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        }
+    ]
+}

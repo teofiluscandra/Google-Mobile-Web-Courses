@@ -1,0 +1,9 @@
+{
+    "places" : [
+        {"lokasi": [-8.5068079, 115.2629917], "sponsor" : "Seniman Coffee Studio","gambar":"images/seniman.jpeg","review": "Tasty food; good drinks and a very nice service."},
+        {"lokasi": [-8.683502, 115.1553763], "sponsor" : "Titik Temu","gambar":"images/titiktemu.jpeg","review": "Tempat nongkrong dengan outdoor seating ditaman dan live musik sambil menikmati kopi yg berkualitas."},
+        {"lokasi": [-8.7045497, 115.2477722], "sponsor" : "Kopi Bali House", "gambar":"images/kopibali.jpeg","review": "Coffees, teas, and regular selection of western and local foods"},
+        {"lokasi": [-8.7016157, 115.1776513], "sponsor" : "Kopi Luwak Roast House and Cafe","gambar":"images/kopiluwak.jpeg","review": "Brilliant place lovely staff well priced food and drink."},
+        {"lokasi": [-8.7150239, 115.1711875], "sponsor" : "Kopi Pot", "gambar":"images/kopipot.jpeg","review": "Amazing food, good service and good atmosphere to sit."}
+    ]
+}

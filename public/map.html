@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Map Information</title>
+    <link rel="icon" href="images/js.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+   <style>
+        #mapid { height: 100vh; }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <div id="mapid"></div>
+    </div>
+</body>
+</html>
+<script>
+    var mymap = L.map('mapid').setView([-8.7002377,115.1838578,15], 13);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1IjoidGVvZmlsdXMtY2FuZHJhIiwiYSI6ImNqbTVxaW84MTNwcG4zdm9iYmRzNG1iZDkifQ.tGNYjHdJUDam12JmwXx9Fg'
+    }).addTo(mymap);
+
+    var style = {
+                    color: '#634832',
+                    fillColor: '#967259',
+                    fillOpacity: 0.5,
+                    radius: 500
+                }
+                
+    var arrayLocation = [
+            {"lokasi": [-8.5068079, 115.2629917], "sponsor" : "Seniman Coffee Studio","gambar":"images/seniman.jpeg","review": "Tasty food; good drinks and a very nice service."},
+            {"lokasi": [-8.683502, 115.1553763], "sponsor" : "Titik Temu","gambar":"images/titiktemu.jpeg","review": "Tempat nongkrong dengan outdoor seating ditaman dan live musik sambil menikmati kopi yg berkualitas."},
+            {"lokasi": [-8.7045497, 115.2477722], "sponsor" : "Kopi Bali House", "gambar":"images/kopibali.jpeg","review": "Coffees, teas, and regular selection of western and local foods"},
+            {"lokasi": [-8.7016157, 115.1776513], "sponsor" : "Kopi Luwak Roast House and Cafe","gambar":"images/kopiluwak.jpeg","review": "Brilliant place lovely staff well priced food and drink."},
+            {"lokasi": [-8.7150239, 115.1711875], "sponsor" : "Kopi Pot", "gambar":"images/kopipot.jpeg","review": "Amazing food, good service and good atmosphere to sit."}
+        ]
+    
+    for(let place of arrayLocation) {
+        console.log(place)
+        L.circle(place.lokasi, style).addTo(mymap);
+        let marker = L.marker(place.lokasi).addTo(mymap);
+        marker.bindPopup(`<p align='center'><img src='${place.gambar}' width='100%'><br><br><b>${place.sponsor}</b><br>Latitude Longitude : ${place.lokasi} <br><br> Bali, Indonesia</p>`).openPopup();
+    }
+</script>
